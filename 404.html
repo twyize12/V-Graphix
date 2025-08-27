@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page error "404"</title>
+  <style>
+    :root {
+      --electric-blue: #ff0000;
+      --emerald-green: #780000;
+      --darker-bg: #0a0a0a;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .vimage {
+      display: block;
+      margin-top: 20px;
+      height: 300px;
+      width: 300px;
+      animation: heartbeat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
+    }
+    
+    h3 {
+      color:#000000de;
+      font-size: 17px;
+    }
+    
+    p {
+      max-width: 600px;
+      margin: 10px 0;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, var(--electric-blue), var(--emerald-green));
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(255,0,0,0.241);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(255,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <img src="404.png" alt="V-error" class="vimage">
+  
+  <h3>PAGE NOT FOUND</h3>
+  <p>Opps! A wrong end, The page serached doesnt exist.</p>
+
+  <div class="hero-buttons">
+    <a href="/" class="btn btn-primary">Go back</a>
+  </div>
+</body>
+</html>
