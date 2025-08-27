@@ -1985,23 +1985,26 @@ gsap.utils.toArray(".service-card").forEach(card => {
 });
   </script>
   
-  <script>
+ <script>
 // 404 Page Handler - Only activates on missing pages
 (function() {
-  // Skip if this is the homepage or a known valid route
-  const validRoutes = ['/', '/index.html', '#home', '#services', '#portfolio', '#contact','schoolcode'];
-  const currentPath = window.location.pathname + window.location.hash;
-  
-  // Check if the current path is invalid (and not the homepage)
-  if (!validRoutes.some(route => currentPath.endsWith(route)) && currentPath !== '/') {
-    // First verify if this is really a 404 (fetch check)
-    fetch(window.location.pathname, { method: 'HEAD' })
+  // Define only actual page routes, not hashes
+  const validRoutes = ['/', '/index.html', '/schoolcode.html'];
+
+  const path = window.location.pathname.toLowerCase();
+
+  // Only check real pages, not section hashes
+  if (!validRoutes.includes(path)) {
+    fetch(path, { method: 'HEAD' })
       .then(response => {
         if (response.status === 404) {
-          // Only then redirect to 404 page
           window.location.href = '404.html';
         }
       })
-
+      .catch(() => {
+        window.location.href = '404.html';
+      });
+  }
+})();
 </script>
 </html>
